@@ -196,6 +196,8 @@ NSString *const AppWillTerminateNotificationName = @"appWillTerminate";
             case STContentTypeAll:
             case STContentTypeArticle:
                 [buttonTitles addObject:@"Add to Instapaper"];
+                [self.actionSheetServiceButtonList addObject:[[NSNumber alloc] initWithInt:STServiceTypeInstapaper]];
+
                 if (self.pocketAPIKey) {
                     [buttonTitles addObject:@"Add to Pocket"];
                     [self.actionSheetServiceButtonList addObject:[[NSNumber alloc] initWithInt:STServiceTypePocket]];
@@ -203,7 +205,7 @@ NSString *const AppWillTerminateNotificationName = @"appWillTerminate";
                 
                 if (self.readabilityKey && self.readabilitySecret) {
                     [buttonTitles addObject:@"Add to Readability"];
-                    [self.actionSheetServiceButtonList addObject:[[NSNumber alloc] initWithInt:STServiceTypeInstapaper]];
+                    [self.actionSheetServiceButtonList addObject:[[NSNumber alloc] initWithInt:STServiceTypeReadability]];
                 }
                 break;
             case STContentTypeVideo:
