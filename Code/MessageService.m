@@ -21,6 +21,9 @@ static MessageService *_manager;
 
 - (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result
 {
+    if (result == MessageComposeResultSent) {
+        [[ShareNotifier notifier] notifyOfShareByServiceNamed:@"message"];
+    }
     [[controller presentingViewController] dismissModalViewControllerAnimated:YES];
 }
 

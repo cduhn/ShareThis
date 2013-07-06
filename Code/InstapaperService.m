@@ -102,6 +102,7 @@ static InstapaperService *_manager;
             [self postToService];
             break;
         case SUCCESS_POSTED:
+            [[ShareNotifier notifier] notifyOfShareByServiceNamed:@"instapaper"];
             [self showAlertMessageWithTitle:@"Success" Message:@"Successfully Added!"];
             break;
         case BAD_REQUEST_INSTAPAPER:

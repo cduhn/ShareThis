@@ -4,6 +4,7 @@
 #import <FacebookSDK/FacebookSDK.h>
 #import <Social/Social.h>
 #import "REComposeViewController.h"
+#import "ShareNotifier.h"
 
 static FacebookService *_manager;
 
@@ -45,6 +46,7 @@ static FacebookService *_manager;
                  case SLComposeViewControllerResultCancelled:
                      break;
                  case SLComposeViewControllerResultDone:
+                     [[ShareNotifier notifier] notifyOfShareByServiceNamed:@"facebook"];
                      break;
                  default:
                      break;
@@ -200,6 +202,7 @@ static FacebookService *_manager;
                          NSError *error) {
 
          if (!error) {
+             [[ShareNotifier notifier] notifyOfShareByServiceNamed:@"facebook"];
              return;
          }
          

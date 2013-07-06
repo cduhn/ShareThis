@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name     = 'ShareThis'
-  s.version  = '1.0.1'
+  s.version  = '1.0.2'
   s.platform = :ios, '5.0'
   s.license  = { :type => 'BSD'}
   s.summary  = 'An iOS sharing tool that can be easily inserted into a project.'
@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
 		  'Alex Ivlev'  => 'aivlev@ign.com',
 		  'Brad Taylor'  => 'brtaylor@ign.com' }
 
-  s.source   = { :git => 'https://github.com/ign/ShareThis.git', :tag => '1.0.1' }
+  s.source   = { :git => 'https://github.com/ign/ShareThis.git', :tag => '1.0.2' }
 
   s.description  = 'A sharing controller that allows anyone to implement '\
 		   'sharing into their projects easily. iOS 5 will use action '\

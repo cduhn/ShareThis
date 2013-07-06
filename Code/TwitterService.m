@@ -21,6 +21,7 @@
                  case SLComposeViewControllerResultCancelled:
                      break;
                  case SLComposeViewControllerResultDone:
+                     [[ShareNotifier notifier] notifyOfShareByServiceNamed:@"twitter"];
                      break;
                  default:
                      break;
@@ -36,6 +37,20 @@
         [twitter addURL:[params objectForKey:@"url"]];
         [twitter addImage:[params objectForKey:@"image"]];
         [twitter setInitialText:[params objectForKey:@"title"]];
+        [twitter setCompletionHandler:^
+         (SLComposeViewControllerResult result){
+             switch (result) {
+                 case SLComposeViewControllerResultCancelled:
+                     break;
+                     
+                 case SLComposeViewControllerResultDone:
+                     [[ShareNotifier notifier] notifyOfShareByServiceNamed:@"twitter"];
+                     break;
+
+                 default:
+                     break;
+             }
+         }];
         // Show twitter view on passed in viewcontroller
         [viewController presentViewController:twitter animated:YES completion:nil];
     }
