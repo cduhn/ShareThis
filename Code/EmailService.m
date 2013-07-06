@@ -1,6 +1,7 @@
 /* Copyright 2012 IGN Entertainment, Inc. */
 
 #import "EmailService.h"
+#import "ShareNotifier.h"
 
 static EmailService *_manager;
 
@@ -45,6 +46,9 @@ static EmailService *_manager;
           didFinishWithResult:(MFMailComposeResult)result
                         error:(NSError *)error
 {
+    if (result == MFMailComposeResultSent) {
+        [[ShareNotifier notifier] notifyOfShareByServiceNamed:@"email"];
+    }
     [[controller presentingViewController] dismissModalViewControllerAnimated:YES];
 }
 
