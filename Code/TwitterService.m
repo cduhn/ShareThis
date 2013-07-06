@@ -51,6 +51,7 @@
                  default:
                      break;
              }
+             [viewController dismissViewControllerAnimated:YES completion:nil];
          }];
         // Show twitter view on passed in viewcontroller
         [viewController presentViewController:twitter animated:YES completion:nil];
