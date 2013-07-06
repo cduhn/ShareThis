@@ -2,6 +2,7 @@
 
 #import "InstapaperService.h"
 #import "KeychainItemWrapper.h"
+#import "ShareNotifier.h"
 
 //Instapaper:Successfully logged in, Pocket: Success
 const int SUCCESS_LOGIN = 200;

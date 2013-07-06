@@ -3,6 +3,7 @@
 #import "TwitterService.h"
 #import <Social/Social.h>
 #import <Twitter/Twitter.h>
+#import "ShareNotifier.h"
 
 @implementation TwitterService
 

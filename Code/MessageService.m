@@ -1,6 +1,7 @@
 /* Copyright 2012 IGN Entertainment, Inc. */
 
 #import "MessageService.h"
+#import "ShareNotifier.h"
 
 static MessageService *_manager;
 
